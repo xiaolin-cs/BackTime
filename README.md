@@ -25,8 +25,9 @@
 
 ---
 
-## 🌟 Overview 
+
 <a name="overview"></a>
+## 🌟 Overview 
 **BACKTIME** is the first framework to explore **backdoor attacks** on **multivariate time series (MTS) forecasting**, a critical domain with real-world applications such as climate prediction, traffic control, and financial markets. Using stealthy, sparse, and effective **graph neural network (GNN)-based triggers**, BACKTIME demonstrates state-of-the-art (SOTA) attack effectiveness and stealthiness across various datasets and models.
 
 ### 🧩 Key Features
@@ -40,8 +41,8 @@
 
 ---
 
-## 📊 Empirical Results
 <a name="empirical-results"></a>
+## 📊 Empirical Results
 BACKTIME achieves outstanding attack performance while maintaining competitive natural forecasting ability. Below are the main results on different datasets:
 
 <p align="center">
@@ -50,19 +51,19 @@ BACKTIME achieves outstanding attack performance while maintaining competitive n
 
 ---
 
-## 🚀 Getting Started
 <a name="getting-started"></a>
+## 🚀 Getting Started
 
-### 1. Prerequisites
 <a name="prerequisites"></a>
+### 1. Prerequisites
 - Python 3.8+
 - Install dependencies:
   ```bash
     pip install -r requirements.txt
   ```
 
-### 2. Configuration
 <a name="configuration"></a>
+### 2. Configuration
 - **`configs/train_config.yaml`**: Configuration file for the project. Specify the hyperparameters and training details.
 - **`configs/default_config.yaml`**: Configuration file for the dataset/model/target pattern.
 
@@ -90,8 +91,8 @@ Train:
     hidden_dim: 64              # hidden_dim for the trigger generator
 ```
 
-### 3. Running the Framework
 <a name="run-the-framework"></a>
+### 3. Running the Framework
 Execute the following command to train and attack:
 ```bash
 python run.py
@@ -122,8 +123,8 @@ Epoch: 2 | clean MAE: 18.16, clean RMSE: 28.13 | attacked MAE: 28.96, attacked R
 ...
 ```
 
-## 🔬 Methodology
 <a name="methodology"></a>
+## 🔬 Methodology
 BACKTIME leverages a **bi-level optimization framework** to adaptively generate stealthy triggers for backdoor attacks in multivariate time series (MTS) forecasting. The methodology consists of three key steps:
 
 BACKTIME leverages a bi-level optimization framework to adaptively generate stealthy triggers. Key steps include:
@@ -132,16 +133,16 @@ BACKTIME leverages a bi-level optimization framework to adaptively generate stea
 2. **Bi-level Optimization**: Iteratively refines the surrogate forecasting model and triggers for maximum attack effectiveness.
 For more details, refer to [the paper](https://arxiv.org/abs/2410.02195).
 
-## 💡 Datasets
 <a name="datasets"></a>
+## 💡 Datasets
 BACKTIME is validated on five real-world datasets:
 
 - PEMS03/PEMS04/PEMS08: Traffic flow data.
 - Weather: Climate data across U.S. locations.
 - ETTm1: Electric power load data.
 
-## 📖 Citation
 <a name="citation"></a>
+## 📖 Citation
 If you find BACKTIME helpful in your research, please cite our work:
 ```bibtex
 @article{lin2024backtime,
@@ -152,8 +153,8 @@ If you find BACKTIME helpful in your research, please cite our work:
 }
 ```
 
-## 📬 Contact
 <a name="contact"></a>
+## 📬 Contact
 For questions or collaborations, please contact:
 
 - Xiao Lin: xiaol13@illinois.edu
