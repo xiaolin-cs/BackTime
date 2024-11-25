@@ -83,7 +83,7 @@ Train:
     pattern_type: cone          # the type of the pattern
     trigger_len: 4              # the length of the trigger
     pattern_len: 7              # the length of the pattern
-    bef_tgr_len: 6              # the length of the data before the trigger to fed into the trigger generator
+    bef_tgr_len: 6              # the length of the data before the trigger to feed into the trigger generator
     lam_norm: 0.05              # the weight for the norm loss
     alpha_s: 0.3                # spatial_poison_rate
     alpha_t: 0.03               # temporal_poison_rate
