@@ -80,7 +80,7 @@ def main(config):
         exp_trainer.load_attacker(state)
         print('load attacker from', save_file)
     else:
-        print('*' * 40)
+        print('=' * 20, ' [ Stage 1 ] ', '=' * 20)
         print('start training surrogate model and attacker')
         exp_trainer.train()
 
@@ -89,7 +89,7 @@ def main(config):
             os.makedirs('./checkpoints')
         torch.save(state, save_file)
 
-    print('*' * 40)
+    print('=' * 20, ' [ Stage 2 ] ', '=' * 20)
     print('start evaluating attack performance on a new model')
     exp_trainer.test()
 
