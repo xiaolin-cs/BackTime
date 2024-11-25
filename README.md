@@ -92,7 +92,7 @@ Train:
 ```
 
 <a name="run-the-framework"></a>
-### 3. Running the Framework
+### 3. Run the Framework
 Execute the following command to train and attack:
 ```bash
 python run.py
