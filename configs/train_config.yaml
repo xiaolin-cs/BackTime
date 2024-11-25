@@ -1,0 +1,19 @@
+Train:
+    batch_size: 64
+    learning_rate: 0.0001
+    attack_lr: 0.005
+    num_epochs: 100
+    warmup: 10
+    gpuid: '0'
+    surrogate_name: FEDformer
+    model_name: Autoformer
+    dataset: PEMS03
+    pattern_type: cone
+    trigger_len: 4
+    pattern_len: 7
+    bef_tgr_len: 6
+    lam_norm: 0.05
+    alpha_s: 0.3  # spatial_poison_rate
+    alpha_t: 0.03  # temporal_poison_rate
+    epsilon: 0.2
+    hidden_dim: 64  # hidden_dim for the trigger generator

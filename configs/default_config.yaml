@@ -1,0 +1,94 @@
+Model:
+    TimesNet:
+        task_name: short_term_forecast
+        seq_len: 12
+        label_len: 12
+        pred_len: 12
+        e_layers: 2
+        embed: timeF
+        freq: h
+        dropout: 0.1
+        top_k: 5
+        d_model: 256
+        d_ff: 256
+        factor: 3
+        num_kernels: 6
+        output_attention: 0
+        distil: 1
+
+    FEDformer:
+        task_name: short_term_forecast
+        seq_len: 12
+        label_len: 12
+        pred_len: 12
+        e_layers: 2
+        d_layers: 1
+        num_kernels: 6
+        embed: timeF
+        freq: h
+        dropout: 0.1
+        d_model: 512
+        d_ff: 2048
+        n_heads: 8
+        factor: 3
+        output_attention: 0
+        distil: 1
+        activation: gelu
+        moving_avg: 25
+
+    Autoformer:
+        task_name: short_term_forecast
+        seq_len: 12
+        label_len: 12
+        pred_len: 12
+        e_layers: 2
+        d_layers: 1
+        num_kernels: 6
+        embed: timeF
+        freq: h
+        dropout: 0.1
+        d_model: 512
+        d_ff: 2048
+        n_heads: 8
+        factor: 3
+        output_attention: 0
+        distil: 1
+        activation: gelu
+        moving_avg: 25
+
+Dataset:
+    PEMS03:
+        data_filename: ./data/PEMS03/PEMS03.npz
+        num_of_vertices: 358
+        period: 288
+        points_per_hour: 12
+        num_for_predict: 12
+        len_input: 12
+        dataset_name: PEMS03
+        use_timestamps: False
+
+    PEMS04:
+        data_filename: ./data/PEMS04/PEMS04.npz
+        num_of_vertices: 307
+        period: 288
+        points_per_hour: 12
+        num_for_predict: 12
+        len_input: 12
+        dataset_name: PEMS04
+        use_timestamps: False
+
+    PEMS08:
+        data_filename: ./data/PEMS08/PEMS08.npz
+        num_of_vertices: 170
+        period: 288
+        points_per_hour: 12
+        num_for_predict: 12
+        len_input: 12
+        dataset_name: PEMS08
+        use_timestamps: False
+
+
+Target_Pattern:
+    cone: [0.1278, 0.1748, 0.2787, 0.3853, 0.2787, 0.1748, 0.1278]
+    up_trend: [0.1405, 0.2064, 0.2705, 0.2835, 0.2949, 0.3495, 0.3567]
+    up_and_down: [0.10, 0.1687, 0.2851, 0.09601, -0.0230, -0.0916, -0.2402]
