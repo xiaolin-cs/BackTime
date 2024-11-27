@@ -102,7 +102,6 @@ class Trainer:
                 loss_per_sample = F.smooth_l1_loss(outputs, labels, reduction='none')
                 loss_per_sample = loss_per_sample.mean(dim=(1, 2))
 
-                # todo: the index should be the start point of triggers, so idx = idx + trigger_len. please check this
                 poison_metrics.append(torch.stack([loss_per_sample.cpu().detach(), idx.cpu().detach()], dim=1))
                 loss = loss_per_sample.mean()
                 loss.backward()
@@ -181,7 +180,6 @@ class Trainer:
         model = MODEL_MAP[self.config.model_name](self.config.Model).to(self.device)
         optimizer = optim.Adam(model.parameters(), lr=self.config.learning_rate)
 
-        # todo: evaluate whether sparse_inject() is correct here
         self.attacker.sparse_inject()
         self.train_set = self.attacker.dataset
         self.train_loader = DataLoader(self.train_set, batch_size=self.batch_size, shuffle=True)
