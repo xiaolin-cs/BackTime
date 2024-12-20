@@ -68,7 +68,7 @@ BACKTIME achieves outstanding attack performance while maintaining competitive n
 - **`configs/default_config.yaml`**: Configuration file for the dataset/model/target pattern.
 
 [//]: # (insert a tip to modify the configuration file)
-Tips: Feel free to modify `model_name`, `dataset`, `pattern_type` in `train_config.yaml;` file:
+Tips: Feel free to modify `model_name`, `dataset`, `pattern_type` in `train_config.yaml` file:
 ```yaml
 Train:
     batch_size: 64              # the batch size for training
