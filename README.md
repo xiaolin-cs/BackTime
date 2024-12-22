@@ -68,7 +68,7 @@ BACKTIME achieves outstanding attack performance while maintaining competitive n
 - **`configs/default_config.yaml`**: Configuration file for the dataset/model/target pattern.
 
 [//]: # (insert a tip to modify the configuration file)
-Tips: Feel free to modify `model_name`, `dataset`, `pattern_type` in `train_config.yaml;` file:
+Tips: Feel free to modify `model_name`, `dataset`, `pattern_type` in `train_config.yaml` file:
 ```yaml
 Train:
     batch_size: 64              # the batch size for training
@@ -100,7 +100,9 @@ python run.py
 
 BACKTIME will go through two stages:
 
-1. **Training the surrogate model**: The surrogate model and the trigger generator will be trained in this stage. The training logs would be similar to the following:
+1. **Training the surrogate model**: The surrogate model and the trigger generator will be trained in this stage. 
+   1. With pre-trained model: The python file would automatically load the pretrained trigger generator model saved at `./checkpoints/attack_{dataset}.pth`. 
+   2. Without pre-trained model: Please delete or remove the checkpoint files in `./checkpoints`. Then the training logs would be similar to the following:
 
 [//]: # (example output)
 ```
