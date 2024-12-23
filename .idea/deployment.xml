@@ -26,7 +26,7 @@
       <paths name="idealab-05">
         <serverdata>
           <mappings>
-            <mapping deploy="/projects/st-graph/backdoor/DSTAGNN/BackTime" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/projects/BackTime" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
