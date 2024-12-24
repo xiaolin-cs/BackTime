@@ -139,9 +139,9 @@ For more details, refer to [the paper](https://arxiv.org/abs/2410.02195).
 ## 💡 Datasets
 BACKTIME is validated on five real-world datasets:
 
-- PEMS03/PEMS04/PEMS08: Traffic flow data.
-- Weather: Climate data across U.S. locations.
-- ETTm1: Electric power load data.
+- PEMS03/PEMS04/PEMS08: Traffic flow data. Provided in the [./data](https://github.com/xiaolin-cs/BackTime/tree/main/data) folder.
+- Weather: Climate data across U.S. locations. Please download it from [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
+- ETTm1: Electric power load data. Please download it from [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
 
 <a name="citation"></a>
 ## 📖 Citation
