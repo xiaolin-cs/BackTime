@@ -148,6 +148,11 @@ class Trainer:
 
             if epoch > atk_eval_epoch:
                 for batch_index, batch_data in enumerate(self.atk_test_loader):
+                    if not self.use_timestamps:
+                        encoder_inputs, labels, clean_labels, idx = batch_data
+                    else:
+                        encoder_inputs, labels, clean_labels, x_mark, y_mark, idx = batch_data
+
                     # calculate the attacked performance
                     encoder_inputs, labels, clean_labels, idx = batch_data
                     encoder_inputs = torch.squeeze(encoder_inputs).to(self.device).permute(0, 2, 1)

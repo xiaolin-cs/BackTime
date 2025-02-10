@@ -88,6 +88,15 @@ Dataset:
         use_timestamps: False
 
 
+    Weather:
+        data_filename: ./data/weather/weather.csv
+        num_of_vertices: 21
+        num_for_predict: 12
+        len_input: 12
+        dataset_name: Weather
+        use_timestamps: True
+
+
 Target_Pattern:
     cone: [0.1278, 0.1748, 0.2787, 0.3853, 0.2787, 0.1748, 0.1278]
     up_trend: [0.1405, 0.2064, 0.2705, 0.2835, 0.2949, 0.3495, 0.3567]
