@@ -57,6 +57,7 @@ def main(config):
     data_config = config.Dataset
     if not data_config.use_timestamps:
         train_mean, train_std, train_data_seq, test_data_seq = load_raw_data(data_config)
+        train_data_stamps = test_data_stamps = None
     else:
         train_mean, train_std, train_data_seq, test_data_seq, train_data_stamps, test_data_stamps = load_raw_data(data_config)
 
@@ -72,7 +73,8 @@ def main(config):
     target_pattern = config.Target_Pattern
     target_pattern = torch.tensor(target_pattern).float().to(DEVICE) * train_std
 
-    exp_trainer = Trainer(config, atk_vars, target_pattern, train_mean, train_std, train_data_seq, test_data_seq, DEVICE)
+    exp_trainer = Trainer(config, atk_vars, target_pattern, train_mean, train_std, train_data_seq, test_data_seq,
+                          train_data_stamps, test_data_stamps, DEVICE)
 
     save_file = f'./checkpoints/attacker_{config.dataset}.pth'
     if os.path.exists(save_file):

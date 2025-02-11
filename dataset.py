@@ -85,6 +85,8 @@ class TimeDataset(Dataset):
         self.num_for_hist = num_for_hist
         self.num_for_futr = num_for_futr
 
+        print('shape of data:', self.data.shape)
+
     def __len__(self):
         return self.data.shape[-1] - self.num_for_hist - self.num_for_futr + 1
 
@@ -128,6 +130,8 @@ class AttackEvaluateSet(TimeDataset):
         """
         if self.use_timestamp:
             features, target, clean_target, input_stamps, target_stamps, idx = zip(*data)
+            input_stamps = torch.stack(input_stamps, dim=0)
+            target_stamps = torch.stack(target_stamps, dim=0)
         else:
             features, target, clean_target, idx = zip(*data)
 
@@ -147,4 +151,7 @@ class AttackEvaluateSet(TimeDataset):
             self.attacker.target_pattern + features[:, self.attacker.atk_vars, :, -self.attacker.trigger_len - 1]
 
         features = self.normalize(features)
-        return features, target, clean_target, idx
+        if not self.use_timestamp:
+            return features, target, clean_target, idx
+        else:
+            return features, target, clean_target, input_stamps, target_stamps, idx

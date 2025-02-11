@@ -6,8 +6,8 @@ Train:
     warmup: 10
     gpuid: '0'
     surrogate_name: FEDformer
-    model_name: FEDformer
-    dataset: PEMS03
+    model_name: Autoformer
+    dataset: Weather
     pattern_type: cone
     trigger_len: 4
     pattern_len: 7
