@@ -250,7 +250,7 @@ class Attacker:
             tgr_slices = self.get_trigger_slices(self.fct_input_len - self.trigger_len,
                                                  self.trigger_len + self.pattern_len + self.fct_output_len)
         else:
-            tgr_slices, tgr_timestamps = self.get_tgr_slices(self.fct_input_len - self.trigger_len,
+            tgr_slices, tgr_timestamps = self.get_trigger_slices(self.fct_input_len - self.trigger_len,
                                                              self.trigger_len + self.pattern_len + self.fct_output_len)
         pbar = tqdm.tqdm(tgr_slices, desc=f'Attacking data {epoch}/{epochs}')
         for slice_id, slice in enumerate(pbar):
